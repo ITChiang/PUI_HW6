@@ -7,8 +7,9 @@
     <link>
     <link rel="icon" href="./images/icon_black.ico">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="./scripts/cartDisplay.js"></script>
 </head>
-<body>
+<body onload="displayCart()">
 <header>
     <div>
         <nav>
@@ -24,7 +25,7 @@
         </nav>
     </div>
     <div class="cart">
-        <span>CART (1)</span>
+        <span id="cart_icon_display">CART (0)</span>
     </div>
     <div class="cart_screen">
         <div class="cart_header">
@@ -33,29 +34,34 @@
         <div class="cart_cotext">
             <h3>Thanks for your order</h3>
             <h4 class="left">What's inside</h4>
-            <div class="cart_item">
+            <div id="cart_display_area">
+            <!-- <div class="cart_item">
                 <img class="small-pic" src="images/bum (1).png" alt='bum pic'>
                 <div class="cart_item_price">
                 <div style="font-size:1.5rem;text-align: left;">Original</div>
+                <button class="delete-btn" onclick="removeItem()" > x </button>
                 <div style="margin-top: 10vh; font-size: 1.3rem;width: 100%;text-align:left;">
                     <span >$6.00 x 1</span><span style="margin-left: 25vw;">$6.00</span>
                 </div>
                 </div>
-            </div>
+            </div> -->
+        </div>
             <hr>
+            <div id = "cart_amount_area">
             <ul>
                 <div class = "sub_text">
-                    <span>SUBTOTAL:</span><span class="alright">$6.00</span>
+                    <span>SUBTOTAL:</span><span class="alright">$0.00</span>
                 </div>
                 <div class = "sub_text">
-                    <span>TAX</span><span class="alright">$1.25</span>
+                    <span>TAX</span><span class="alright">$0.00</span>
                 </div>
                 <div class = "sub_text">
-                    <span>ORDER TOTAL</span><span class="alright">$7.25</span>
+                    <span>ORDER TOTAL</span><span class="alright">$0.00</span>
                 </div>
             </ul>
+        </div>
             <form action="menu.html">
-            <input type="submit" class="back-btn" value="BACK TO MENU" >
+            <input type="submit" class="back-btn" value="CHECKOUT" onclick="checkout()" >
         </form>
         </div>
        
